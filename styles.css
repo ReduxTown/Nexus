@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: #e0e0ff;
+  font-family: system-ui, -apple-system, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+.title {
+  font-size: 3.8rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #a78bfa, #c084fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 0.5rem;
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #c3c3ff;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+}
+
+.input-group {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 2rem;
+}
+
+#usernameInput {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  border: 2px solid #6b7280;
+  border-radius: 12px;
+  background: rgba(30, 30, 60, 0.6);
+  color: white;
+  outline: none;
+  transition: all 0.2s;
+}
+
+#usernameInput:focus {
+  border-color: #a78bfa;
+  box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.3);
+}
+
+#scanBtn {
+  padding: 0 1.8rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: #7c3aed;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#scanBtn:hover:not(:disabled) {
+  background: #6d28d9;
+  transform: translateY(-2px);
+}
+
+#scanBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.hidden { display: none !important; }
+
+#loading {
+  font-size: 1.3rem;
+  color: #a78bfa;
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.error {
+  color: #f87171;
+  font-size: 1.1rem;
+  margin: 1.5rem 0;
+}
+
+.result-card {
+  background: rgba(30, 30, 60, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(167, 139, 250, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+#scannedName {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #e0e0ff;
+}
+
+.platform-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+}
+
+@media (min-width: 500px) {
+  .platform-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.platform-card {
+  background: rgba(20, 20, 50, 0.6);
+  border-radius: 12px;
+  padding: 1.4rem;
+  border: 1px solid rgba(100, 100, 255, 0.15);
+}
+
+.platform-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  color: #c4b5fd;
+}
+
+#robloxStatus.available { color: #86efac; font-weight: 600; }
+#robloxStatus.taken    { color: #fca5a5; font-weight: 600; }
+#robloxStatus.invalid  { color: #fbbf24; font-weight: 600; }
+
+footer {
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
