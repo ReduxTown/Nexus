@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nexus UserScanning</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/framer-motion@11.0.8/dist/framer-motion.js"></script> <!-- optional smooth anims -->
+  <script src="https://unpkg.com/lucide@latest"></script> <!-- icons -->
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Nexus UserScanning</h1>
+    <p class="subtitle">
+      Check Roblox (3–20 chars) & Discord (2–32 chars) username availability
+    </p>
+
+    <div class="input-group">
+      <input 
+        id="usernameInput" 
+        type="text" 
+        placeholder="Enter username..." 
+        autocomplete="off"
+      />
+      <button id="scanBtn">
+        <i data-lucide="search"></i> Scan
+      </button>
+    </div>
+
+    <div id="loading" class="hidden">
+      <i data-lucide="loader-2" class="spin"></i> Scanning...
+    </div>
+
+    <div id="error" class="hidden error"></div>
+
+    <div id="result" class="hidden result-card">
+      <h2 id="scannedName"></h2>
+      <div class="platform-grid">
+        <div class="platform-card" id="robloxCard">
+          <h3>Roblox</h3>
+          <p id="robloxStatus"></p>
+        </div>
+        <div class="platform-card" id="discordCard">
+          <h3>Discord</h3>
+          <p id="discordStatus">No public API — check manually in Discord app/site (ToS-safe). Third-party checkers risk bans.</p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Static site • Vercel + GitHub • Respect platform ToS — no spam
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
